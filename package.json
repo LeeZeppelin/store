@@ -11,6 +11,10 @@
 		"start": "next start",
 		"storybook": "start-storybook"
 	},
+	"precommit": "NODE_ENV=production lint-staged",
+	"lint-staged": {
+		"*.{js,jsx}": [ "pretty-quick --staged", "eslint src/ --fix", "git add" ]
+	},
 	"dependencies": {
 		"next": "^8.1.0",
 		"react": "^16.8.6",
@@ -29,6 +33,9 @@
 		"eslint-plugin-jsx-a11y": "^6.2.1",
 		"eslint-plugin-prettier": "^3.1.0",
 		"eslint-plugin-react": "^7.13.0",
-		"prettier": "^1.17.0"
+		"husky": "^2.2.0",
+		"lint-staged": "^8.1.6",
+		"prettier": "^1.17.0",
+		"pretty-quick": "^1.10.0"
 	}
 }
