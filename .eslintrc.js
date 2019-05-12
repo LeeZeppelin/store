@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['airbnb', 'prettier', 'prettier/react'],
-  plugins: ['prettier'],
+  extends: ['airbnb', 'prettier', 'prettier/react', 'plugin:jest/recommended'],
+  plugins: ['prettier', 'jest'],
   rules: {
     'react/jsx-filename-extension': [
       1,
@@ -16,7 +16,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/*.stories.js']
+        devDependencies: ['**/*.stories.js', '**/*.test.js']
       }
     ]
   },
