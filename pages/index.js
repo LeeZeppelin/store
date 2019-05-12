@@ -1,8 +1,14 @@
 import React from 'react';
-import { Dummy } from '../components/Dummy';
+
+import { Dummy } from '../components';
+import { Main } from '../layouts';
 
 const Home = () => {
-  return <Dummy>Welcome to Next.js!</Dummy>;
+  return (
+    <Main>
+      <Dummy>Welcome to Next.js!</Dummy>
+    </Main>
+  );
 };
 
 export default Home;

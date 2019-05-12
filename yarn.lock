@@ -10337,6 +10337,11 @@ style-loader@^0.23.1:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
 
+styled-bootstrap-grid@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/styled-bootstrap-grid/-/styled-bootstrap-grid-3.0.2.tgz#3221be6b49ff36e2df010066e948e61298ef7c98"
+  integrity sha512-H9oEq7R9vPiApv/1aketM0fkbWQ0ojaRdZJo6q21NVAzjtrMBXPkhhmCxWS/Gu5yrr8oTm4hTNeEfHM76hhqhw==
+
 styled-components@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-4.2.0.tgz#811fbbec4d64c7189f6c7482b9eb6fefa7fefef7"
