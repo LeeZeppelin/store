@@ -13,7 +13,7 @@
 	},
 	"precommit": "NODE_ENV=production lint-staged",
 	"lint-staged": {
-		"*.{js,jsx}": [ "pretty-quick --staged", "eslint src/ --fix", "git add" ]
+		"*.{js,jsx}": [ "pretty-quick --staged", "eslint ./ --fix", "git add" ]
 	},
 	"dependencies": {
 		"next": "^8.1.0",
