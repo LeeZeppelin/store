@@ -8,7 +8,7 @@ import { Main } from '../layouts';
 
 const allProductsQuery = gql`
   {
-    getProducts {
+    products {
       title
     }
   }

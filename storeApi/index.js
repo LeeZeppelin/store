@@ -7,8 +7,13 @@ import {
   typeDefs as Products
 } from './products';
 
+import { resolvers as cartResolvers, typeDefs as Cart } from './cart';
+
 const BaseQuery = `
   type Query {
+    _empty: String
+  }
+  type Mutation {
     _empty: String
   }
 `;
@@ -16,8 +21,8 @@ const BaseQuery = `
 // Provide resolver functions for your schema fields
 
 const schema = makeExecutableSchema({
-  typeDefs: [BaseQuery, Products],
-  resolvers: merge({}, productsResolvers)
+  typeDefs: [BaseQuery, Products, Cart],
+  resolvers: merge({}, productsResolvers, cartResolvers)
 });
 
 const server = new ApolloServer({ schema });
