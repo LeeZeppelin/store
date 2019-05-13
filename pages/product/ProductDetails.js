@@ -2,11 +2,12 @@ import React from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 
 import { AddToCart } from './AddToCart';
+import { ProductImage } from './ProductImage';
 
 export const ProductDetails = ({ title, brand, price, description, image }) => (
   <Row>
     <Col xs="8" sm="8">
-      {image}
+      <ProductImage src={`/static/${image}`} alt={title} />
     </Col>
     <Col xs="4" sm="4">
       <p>{brand}</p>
