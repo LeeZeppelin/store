@@ -23,7 +23,7 @@ export const typeDefs = gql`
 
   extend type Mutation {
     addToCart(title: String!, quantity: Int!): Boolean
-    removeFromCart(title: String!, quantity: Int!): Boolean
+    removeFromCart(title: String!, quantity: Int): Boolean
   }
 `;
 
@@ -66,14 +66,15 @@ export const resolvers = {
         .filter(({ title }) => title === titleToMatch)
         .pop();
 
-      if (!matchingProductInCart || quantity < 1) {
+      if (!matchingProductInCart) {
         return false;
       }
 
-      const quantityToRemove =
-        matchingProductInCart.quantity < quantity
-          ? matchingProductInCart.quantity
-          : quantity;
+      let quantityToRemove = quantity || matchingProductInCart.quantity;
+
+      if (quantityToRemove > matchingProductInCart.quantity) {
+        quantityToRemove = matchingProductInCart.quantity;
+      }
 
       if (matchingProductInCart.quantity === quantityToRemove) {
         cart.items = cart.items.filter(({ title }) => title !== titleToMatch);
