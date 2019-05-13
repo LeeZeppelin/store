@@ -5,7 +5,8 @@ import { BaseCSS } from 'styled-bootstrap-grid';
 
 const ShopGlobalStyles = createGlobalStyle`
   body {
-    background: #cccccc;
+    background: #FFFFFF;
+    font-family: arial;
   }
 `;
 

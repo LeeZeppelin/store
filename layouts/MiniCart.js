@@ -1,8 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import Link from 'next/link';
+
+import { Link } from '../components';
 
 const getMiniCart = gql`
   query getMiniCart {
@@ -14,10 +16,17 @@ const getMiniCart = gql`
   }
 `;
 
+const CartWrapper = styled.nav`
+  text-align: right;
+  margin: 25px 0;
+`;
+
 const CartLink = ({ itemCount }) => (
-  <Link href="/cart">
-    <a>My Cart ({itemCount})</a>
-  </Link>
+  <CartWrapper>
+    <Link href="/cart">
+      My Cart {itemCount ? `(${itemCount})` : null} &#x25BC;
+    </Link>
+  </CartWrapper>
 );
 
 export const MiniCart = () => (
