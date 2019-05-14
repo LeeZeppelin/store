@@ -2,14 +2,17 @@ import React from 'react';
 
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import Link from 'next/link';
 
 import { Main } from '../../layouts';
+import { ProductGrid } from './ProductGrid';
 
 const allProductsQuery = gql`
   {
     products {
       title
+      image
+      brand
+      price
     }
   }
 `;
@@ -27,17 +30,7 @@ export const CategoryPage = () => {
             return <p>Loading</p>;
           }
 
-          return (
-            <ul>
-              {data.products.map(({ title }) => (
-                <li>
-                  <Link href={`/product?title=${title}`}>
-                    <a>{title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          );
+          return <ProductGrid products={data.products} />;
         }}
       </Query>
     </Main>
