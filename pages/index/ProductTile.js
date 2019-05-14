@@ -11,6 +11,8 @@ const ProductImage = styled(ResponsiveImage)`
 const TileWrapper = styled.a`
   text-decoration: none;
   text-align: center;
+  padding-bottom: 15px;
+  display: block;
 `;
 
 const BrandTitle = styled.p`
@@ -30,6 +32,7 @@ const ProductPrice = styled.p`
   font-size: 14px;
   color: #999999;
   margin-bottom: 15px;
+  font-family: Georgia;
 `;
 
 export const ProductTile = ({ image, brand, title, price }) => (
