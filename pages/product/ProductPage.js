@@ -24,12 +24,12 @@ export const ProductPage = withRouter(({ router }) => {
     <Main>
       <Query query={getProduct} variables={{ title: router.query.title }}>
         {({ loading, error, data }) => {
-          if (error || !data || !data.product) {
-            return <p>Product Not Found</p>;
+          if (loading) {
+            return null;
           }
 
-          if (loading) {
-            return <p>Loading</p>;
+          if (error || !data || !data.product) {
+            return <p>Product Not Found</p>;
           }
 
           return <ProductDetails {...data.product} />;
