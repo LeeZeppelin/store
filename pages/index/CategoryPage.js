@@ -22,12 +22,12 @@ export const CategoryPage = () => {
     <Main>
       <Query query={allProductsQuery}>
         {({ loading, error, data }) => {
-          if (error) {
-            return <p>No products found</p>;
+          if (loading) {
+            return null;
           }
 
-          if (loading) {
-            return <p>Loading</p>;
+          if (error) {
+            return <p>No products found</p>;
           }
 
           return <ProductGrid products={data.products} />;
