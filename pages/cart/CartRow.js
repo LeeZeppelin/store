@@ -37,7 +37,7 @@ const ProductPrice = styled.p`
 export const CartRow = ({ brand, title, image, quantity, price }) => (
   <RowWrapper>
     <Row>
-      <Col xs="6" sm="6">
+      <Col xs="12" sm="6">
         <Row>
           <Col xs="4" sm="4">
             <ResponsiveImage src={`/static/${image}`} alt={title} />
@@ -48,14 +48,18 @@ export const CartRow = ({ brand, title, image, quantity, price }) => (
           </Col>
         </Row>
       </Col>
-      <Col xs="2" sm="2">
-        <UpdateQuantity title={title} quantity={quantity} />
-      </Col>
-      <Col xs="2" sm="2">
-        <ProductPrice>&#36;{quantity * price}</ProductPrice>
-      </Col>
-      <Col xs="2" sm="2">
-        <RemoveItem title={title} />
+      <Col xs="12" sm="6">
+        <Row>
+          <Col xs="4" sm="6">
+            <UpdateQuantity title={title} quantity={quantity} />
+          </Col>
+          <Col xs="4" sm="2">
+            <ProductPrice>&#36;{quantity * price}</ProductPrice>
+          </Col>
+          <Col xs="4" sm="2">
+            <RemoveItem title={title} />
+          </Col>
+        </Row>
       </Col>
     </Row>
   </RowWrapper>

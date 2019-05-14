@@ -3,16 +3,7 @@ import styled from 'styled-components';
 
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import { QuantityControl } from '../../components';
-
-const PrimaryButton = styled.button`
-  background: #000000;
-  color: #ffffff;
-  text-transform: uppercase;
-  border: 0;
-  font-size: 16px;
-  padding: 16px;
-`;
+import { QuantityControl, PrimaryButton } from '../../components';
 
 const addToCart = gql`
   mutation Increment($title: String!, $quantity: Int!) {

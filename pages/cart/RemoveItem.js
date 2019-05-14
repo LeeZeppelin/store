@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -7,6 +8,14 @@ const removeItem = gql`
   mutation RemoveItem($title: String!) {
     removeFromCart(title: $title)
   }
+`;
+
+const RemoveButton = styled.button`
+  background: transparent;
+  color: #666666;
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
 `;
 
 export const RemoveItem = ({ title }) => {
@@ -19,15 +28,15 @@ export const RemoveItem = ({ title }) => {
       {(remove, { loading, error }) => {
         return (
           <>
-            <button
+            <RemoveButton
               disabled={error || loading}
               onClick={() => {
                 remove({ variables: { title } });
               }}
               type="button"
             >
-              Remove Item
-            </button>
+              &#10005;
+            </RemoveButton>
           </>
         );
       }}

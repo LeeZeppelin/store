@@ -2,10 +2,13 @@ import React from 'react';
 
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import Link from 'next/link';
+import { Row, Col } from 'styled-bootstrap-grid';
+
+import { Link, PrimaryButton } from '../../components';
 
 import { Main } from '../../layouts';
 import { CartTable } from './CartTable';
+import { CartActions } from './CartActions';
 
 const getCompleteCart = gql`
   query getCompleteCart {
@@ -31,16 +34,16 @@ export const CartPage = () => {
             return null;
           }
 
+          const hasItems = data.cart.items.length > 0;
+
           return (
             <>
-              {data.cart.items.length ? (
+              {hasItems ? (
                 <CartTable {...data.cart} />
               ) : (
                 <p>Your cart is empty</p>
               )}
-              <Link href="/">
-                <a>Continue Shopping</a>
-              </Link>
+              <CartActions hasItems={hasItems} total={data.cart.total} />
             </>
           );
         }}

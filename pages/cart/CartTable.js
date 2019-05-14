@@ -4,61 +4,70 @@ import styled from 'styled-components';
 
 import { CartRow } from './CartRow';
 
-const CartTitle = styled.p`
+const CartHeader = styled.p`
+  text-align: ${({ right }) => (right ? 'right' : 'left')};
   font-size: 12px;
-  color: #666666;
-  margin-bottom: 10px;
+  color: ${({ dark }) => (dark ? '#000000' : '#666666')};
+  margin-bottom: 20px;
   text-transform: uppercase;
 `;
 
-const CartHeadingsWrapper = styled.div`
+const CartSection = styled.div`
   border-bottom: 1px solid #cccccc;
   padding-bottom: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 const CartHeadings = () => (
-  <CartHeadingsWrapper>
+  <CartSection>
     <Row>
-      <Col xs="6" sm="6">
-        <CartTitle>Product</CartTitle>
+      <Col xs="12" sm="6">
+        <CartHeader>Product</CartHeader>
       </Col>
-      <Col xs="2" sm="2">
-        <CartTitle>Quantity</CartTitle>
-      </Col>
-      <Col xs="2" sm="2">
-        <CartTitle>Total</CartTitle>
-      </Col>
-      <Col xs="2" sm="2">
-        <CartTitle>Action</CartTitle>
+      <Col xs="12" sm="6">
+        <Row>
+          <Col xs="4" sm="6">
+            <CartHeader>Quantity</CartHeader>
+          </Col>
+          <Col xs="4" sm="2">
+            <CartHeader>Total</CartHeader>
+          </Col>
+          <Col xs="4" sm="2">
+            <CartHeader>Action</CartHeader>
+          </Col>
+        </Row>
       </Col>
     </Row>
-  </CartHeadingsWrapper>
+  </CartSection>
 );
 
 const CartOverview = ({ total }) => (
-  <Row>
-    <Col xs="6" sm="6" />
-    <Col xs="6" sm="6">
-      <p>Cart Overview</p>
-      <Row>
-        <Col xs="6" sm="6">
-          <p>Subtotal</p>
-        </Col>
-        <Col xs="6" sm="6">
-          <p>&#36;{total}</p>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs="6" sm="6">
-          <p>Total</p>
-        </Col>
-        <Col xs="6" sm="6">
-          <p>&#36;{total}</p>
-        </Col>
-      </Row>
-    </Col>
-  </Row>
+  <CartSection>
+    <Row>
+      <Col xs="6" sm="6" />
+      <Col xs="6" sm="6">
+        <CartHeader>Cart Overview</CartHeader>
+        <Row>
+          <Col xs="6" sm="6">
+            <CartHeader>Subtotal</CartHeader>
+          </Col>
+          <Col xs="6" sm="6">
+            <CartHeader right>&#36;{total}</CartHeader>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="6" sm="6">
+            <CartHeader>Total</CartHeader>
+          </Col>
+          <Col xs="6" sm="6">
+            <CartHeader right dark>
+              &#36;{total} CAD
+            </CartHeader>
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+  </CartSection>
 );
 
 export const CartTable = ({ items, total }) => (
