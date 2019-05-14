@@ -15,6 +15,7 @@ export const typeDefs = gql`
   type Cart {
     total: Int!
     items: [LineItem]
+    totalItems: Int!
   }
 
   extend type Query {
@@ -30,7 +31,8 @@ export const typeDefs = gql`
 // TODO: very dumb, single cart implementation
 const cart = {
   items: [],
-  total: 0
+  total: 0,
+  totalItems: 0
 };
 
 export const resolvers = {
@@ -58,6 +60,7 @@ export const resolvers = {
       }
 
       cart.total += matchingProduct.price * quantity;
+      cart.totalItems += quantity;
 
       return true;
     },
@@ -83,6 +86,7 @@ export const resolvers = {
       }
 
       cart.total -= matchingProductInCart.price * quantityToRemove;
+      cart.totalItems -= quantityToRemove;
 
       return true;
     }

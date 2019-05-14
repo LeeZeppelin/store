@@ -9,9 +9,7 @@ import { Link } from '../components';
 const getMiniCart = gql`
   query getMiniCart {
     cart {
-      items {
-        quantity
-      }
+      totalItems
     }
   }
 `;
@@ -35,7 +33,7 @@ export const MiniCart = () => (
       let itemCount = 0;
 
       if (!loading && !error) {
-        itemCount = data.cart.items.length;
+        itemCount = data.cart.totalItems;
       }
 
       return <CartLink itemCount={itemCount} />;
