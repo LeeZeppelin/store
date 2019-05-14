@@ -2,18 +2,20 @@ import React from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
+import { config } from '../../components';
 import { CartRow } from './CartRow';
 
 const CartHeader = styled.p`
   text-align: ${({ right }) => (right ? 'right' : 'left')};
   font-size: 12px;
-  color: ${({ dark }) => (dark ? '#000000' : '#666666')};
+  color: ${({ dark }) =>
+    dark ? config.palette.nearBlack : config.palette.midGray};
   margin-bottom: 20px;
   text-transform: uppercase;
 `;
 
 const CartSection = styled.div`
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid ${config.palette.lightGray};
   padding-bottom: 20px;
   margin-bottom: 10px;
 `;

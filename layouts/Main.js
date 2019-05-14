@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'styled-bootstrap-grid';
 import Link from 'next/link';
 
-import { MainContent } from '../components';
+import { MainContent, config } from '../components';
 import { MiniCart } from './MiniCart';
 
 import { MainNav } from './MainNav';
 
 const HeaderWrapper = styled.div`
-  background-color: #ffffff;
-  border-bottom: 1px solid #cccccc;
+  background-color: ${config.palette.white};
+  border-bottom: 1px solid ${config.palette.lightGray};
   margin-bottom: 20px;
 `;
 

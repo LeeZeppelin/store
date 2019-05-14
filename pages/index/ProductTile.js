@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import Link from 'next/link';
-import { ResponsiveImage } from '../../components';
+import { ResponsiveImage, config } from '../../components';
 
 const ProductImage = styled(ResponsiveImage)`
   margin-bottom: 15px;
@@ -17,22 +17,22 @@ const TileWrapper = styled.a`
 
 const BrandTitle = styled.p`
   font-size: 14px;
-  color: #666666;
+  color: ${config.palette.midGray};
   margin-bottom: 15px;
 `;
 
 const ProductTitle = styled.p`
   font-size: 16px;
   text-transform: uppercase;
-  color: #000000;
+  color: ${config.palette.nearBlack};
   margin-bottom: 15px;
 `;
 
 const ProductPrice = styled.p`
   font-size: 14px;
-  color: #666666;
+  color: ${config.palette.midGray};
   margin-bottom: 15px;
-  font-family: Georgia;
+  font-family: ${config.fontFamily.primary};
 `;
 
 export const ProductTile = ({ image, brand, title, price }) => (

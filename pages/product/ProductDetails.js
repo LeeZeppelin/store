@@ -3,7 +3,7 @@ import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
 import { AddToCart } from './AddToCart';
-import { ResponsiveImage } from '../../components';
+import { ResponsiveImage, config } from '../../components';
 
 const ProductImage = styled(ResponsiveImage)`
   margin-bottom: 20px;
@@ -11,29 +11,29 @@ const ProductImage = styled(ResponsiveImage)`
 
 const ProductInfo = styled.div`
   text-align: center;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid ${config.palette.lightGray};
   margin-bottom: 20px;
 `;
 
 const BrandTitle = styled.p`
   font-size: 14px;
-  color: #666666;
+  color: ${config.palette.midGray};
   margin-bottom: 20px;
 `;
 
 const ProductTitle = styled.p`
   font-size: 28px;
   line-height: 1.5;
-  color: #000000;
+  color: ${config.palette.nearBlack};
   margin-bottom: 20px;
-  font-family: Georgia;
+  font-family: ${config.fontFamily.primary};
 `;
 
 const ProductPrice = styled.p`
   font-size: 18px;
-  color: #666666;
+  color: ${config.palette.midGray};
   margin-bottom: 20px;
-  font-family: Georgia;
+  font-family: ${config.fontFamily.primary};
 `;
 
 const ProductDescription = styled(BrandTitle)`

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import { config } from '../../components';
 
 const removeItem = gql`
   mutation RemoveItem($title: String!) {
@@ -12,7 +13,7 @@ const removeItem = gql`
 
 const RemoveButton = styled.button`
   background: transparent;
-  color: #666666;
+  color: ${config.palette.midGray};
   border: 0;
   font-size: 24px;
   cursor: pointer;

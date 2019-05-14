@@ -2,20 +2,20 @@ import React from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-import { ResponsiveImage } from '../../components';
+import { ResponsiveImage, config } from '../../components';
 import { UpdateQuantity } from './UpdateQuantity';
 
 import { RemoveItem } from './RemoveItem';
 
 const RowWrapper = styled.div`
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid ${config.palette.lightGray};
   padding-bottom: 40px;
   margin-bottom: 20px;
 `;
 
 const BrandTitle = styled.p`
   font-size: 12px;
-  color: #666666;
+  color: ${config.palette.midGray};
   margin-bottom: 10px;
   text-transform: uppercase;
 `;
@@ -23,15 +23,15 @@ const BrandTitle = styled.p`
 const ProductTitle = styled.p`
   font-size: 14px;
   text-transform: uppercase;
-  color: #000000;
+  color: ${config.palette.nearBlack};
   margin-bottom: 15px;
 `;
 
 const ProductPrice = styled.p`
   font-size: 18px;
-  color: #666666;
+  color: ${config.palette.midGray};
   margin-bottom: 20px;
-  font-family: Georgia;
+  font-family: ${config.fontFamily.primary};
 `;
 
 export const CartRow = ({ brand, title, image, quantity, price }) => (
