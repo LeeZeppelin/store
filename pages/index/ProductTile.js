@@ -17,7 +17,7 @@ const TileWrapper = styled.a`
 
 const BrandTitle = styled.p`
   font-size: 14px;
-  color: #999999;
+  color: #666666;
   margin-bottom: 15px;
 `;
 
@@ -30,7 +30,7 @@ const ProductTitle = styled.p`
 
 const ProductPrice = styled.p`
   font-size: 14px;
-  color: #999999;
+  color: #666666;
   margin-bottom: 15px;
   font-family: Georgia;
 `;
