@@ -2,9 +2,6 @@ import React from 'react';
 
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { Row, Col } from 'styled-bootstrap-grid';
-
-import { Link, PrimaryButton } from '../../components';
 
 import { Main } from '../../layouts';
 import { CartTable } from './CartTable';

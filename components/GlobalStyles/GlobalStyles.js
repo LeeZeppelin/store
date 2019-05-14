@@ -3,10 +3,13 @@ import { createGlobalStyle } from 'styled-components';
 import { Reset } from 'styled-reset';
 import { BaseCSS } from 'styled-bootstrap-grid';
 
+import { config } from '../config';
+
 const ShopGlobalStyles = createGlobalStyle`
   body {
-    background: #FFFFFF;
-    font-family: arial;
+    background: ${config.palette.white};
+    color: ${config.palette.nearBlack};
+    font-family: ${config.fontFamily.secondary};
   }
 `;
 

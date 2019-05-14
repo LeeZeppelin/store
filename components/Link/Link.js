@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import NextLink from 'next/link';
 
+import { config } from '../config';
+
 const StyledAnchor = styled.a`
-  font-size: 12px;
+  font-size: ${config.fontSize.small};
   font-weight: bold;
-  color: #000000;
+  color: ${config.palette.nearBlack};
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;

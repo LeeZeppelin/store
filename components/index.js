@@ -5,3 +5,4 @@ export { ResponsiveImage } from './ResponsiveImage';
 export { QuantityControl } from './QuantityControl';
 export { PrimaryButton } from './PrimaryButton';
 export { GlobalStyles } from './GlobalStyles';
+export { config } from './config';

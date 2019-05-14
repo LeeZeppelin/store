@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { config } from '../config';
+
 const QuantityButton = styled.button`
-  font-size: 12px;
-  background: #cccccc;
-  color: #666666;
+  font-size: ${config.fontSize.small};
+  background: ${config.palette.lightGray};
+  color: ${config.palette.midGray};
   height: 24px;
   width: 24px;
   text-align: center;
@@ -14,10 +16,10 @@ const QuantityButton = styled.button`
 `;
 
 const Quantity = styled.p`
-  font-size: 12px;
+  font-size: ${config.fontSize.small};
   padding: 20px;
-  background: #eeeeee;
-  color: #666666;
+  background: ${config.palette.nearWhite};
+  color: ${config.palette.midGray};
   height: 50px;
   width: 50px;
   text-align: center;
