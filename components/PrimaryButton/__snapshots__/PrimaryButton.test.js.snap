@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryButton renders correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="PrimaryButton-vlil7y-0 hhriad"
+  >
+    With some text
+  </button>
+</DocumentFragment>
+`;
