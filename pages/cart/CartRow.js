@@ -3,9 +3,8 @@ import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
 import { ResponsiveImage } from '../../components';
+import { UpdateQuantity } from './UpdateQuantity';
 
-import { IncrementItem } from './IncrementItem';
-import { DecrementItem } from './DecrementItem';
 import { RemoveItem } from './RemoveItem';
 
 const RowWrapper = styled.div`
@@ -50,9 +49,7 @@ export const CartRow = ({ brand, title, image, quantity, price }) => (
         </Row>
       </Col>
       <Col xs="2" sm="2">
-        {quantity}
-        <IncrementItem title={title} />
-        <DecrementItem title={title} />
+        <UpdateQuantity title={title} quantity={quantity} />
       </Col>
       <Col xs="2" sm="2">
         <ProductPrice>&#36;{quantity * price}</ProductPrice>
