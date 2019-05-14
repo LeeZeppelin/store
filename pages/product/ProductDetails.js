@@ -15,13 +15,13 @@ const ProductInfo = styled.div`
   margin-bottom: 20px;
 `;
 
-const BrandTitle = styled.p`
+const BrandTitle = styled.h2`
   font-size: 14px;
   color: ${config.palette.midGray};
   margin-bottom: 20px;
 `;
 
-const ProductTitle = styled.p`
+const ProductTitle = styled.h1`
   font-size: 28px;
   line-height: 1.5;
   color: ${config.palette.nearBlack};
