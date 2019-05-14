@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Row, Col } from 'styled-bootstrap-grid';
 
-import { Link, PrimaryButton } from '../../components';
+import { Link, PrimaryButton, FormatPrice } from '../../components';
 
 const CheckoutButton = styled(PrimaryButton)`
   float: right;
@@ -25,7 +25,7 @@ export const CartActions = ({ hasItems, total }) => {
             <CheckoutButton
               onClick={() => window.alert('Thanks for shopping at Hero')}
             >
-              Checkout (&#36;{total})
+              Checkout (<FormatPrice value={total} />)
             </CheckoutButton>
           ) : null}
         </Col>

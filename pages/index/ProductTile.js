@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import Link from 'next/link';
-import { ResponsiveImage, config } from '../../components';
+import { ResponsiveImage, config, FormatPrice } from '../../components';
 
 const ProductImage = styled(ResponsiveImage)`
   margin-bottom: 15px;
@@ -41,7 +41,9 @@ export const ProductTile = ({ image, brand, title, price }) => (
       <ProductImage src={`/static/${image}`} alt={title} />
       <BrandTitle>{brand}</BrandTitle>
       <ProductTitle>{title}</ProductTitle>
-      <ProductPrice>&#36;{price}</ProductPrice>
+      <ProductPrice>
+        <FormatPrice value={price} />
+      </ProductPrice>
     </TileWrapper>
   </Link>
 );

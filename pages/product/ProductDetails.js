@@ -3,7 +3,7 @@ import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
 import { AddToCart } from './AddToCart';
-import { ResponsiveImage, config } from '../../components';
+import { ResponsiveImage, FormatPrice, config } from '../../components';
 
 const ProductImage = styled(ResponsiveImage)`
   margin-bottom: 20px;
@@ -49,7 +49,9 @@ export const ProductDetails = ({ title, brand, price, description, image }) => (
       <ProductInfo>
         <BrandTitle>{brand}</BrandTitle>
         <ProductTitle>{title}</ProductTitle>
-        <ProductPrice>&#36;{price}</ProductPrice>
+        <ProductPrice>
+          <FormatPrice value={price} />
+        </ProductPrice>
         <ProductDescription>{description}</ProductDescription>
       </ProductInfo>
 

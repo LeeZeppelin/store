@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-import { ResponsiveImage, config } from '../../components';
+import { ResponsiveImage, config, FormatPrice } from '../../components';
 import { UpdateQuantity } from './UpdateQuantity';
 
 import { RemoveItem } from './RemoveItem';
@@ -54,7 +54,9 @@ export const CartRow = ({ brand, title, image, quantity, price }) => (
             <UpdateQuantity title={title} quantity={quantity} />
           </Col>
           <Col xs="4" sm="2">
-            <ProductPrice>&#36;{quantity * price}</ProductPrice>
+            <ProductPrice>
+              <FormatPrice value={quantity * price} />
+            </ProductPrice>
           </Col>
           <Col xs="4" sm="2">
             <RemoveItem title={title} />

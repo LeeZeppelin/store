@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-import { config } from '../../components';
+import { config, FormatPrice } from '../../components';
 import { CartRow } from './CartRow';
 
 const CartHeader = styled.p`
@@ -54,7 +54,9 @@ const CartOverview = ({ total }) => (
             <CartHeader>Subtotal</CartHeader>
           </Col>
           <Col xs="6" sm="6">
-            <CartHeader right>&#36;{total}</CartHeader>
+            <CartHeader right>
+              <FormatPrice value={total} />
+            </CartHeader>
           </Col>
         </Row>
         <Row>
@@ -63,7 +65,7 @@ const CartOverview = ({ total }) => (
           </Col>
           <Col xs="6" sm="6">
             <CartHeader right dark>
-              &#36;{total} CAD
+              <FormatPrice value={total} /> CAD
             </CartHeader>
           </Col>
         </Row>
